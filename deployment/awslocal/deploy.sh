@@ -16,7 +16,7 @@ awslocal sns subscribe \
 
 awslocal lambda create-function \
     --function-name presign \
-    --runtime python3.11 \
+    --runtime python3.13 \
     --timeout 10 \
     --zip-file fileb://lambdas/presign/lambda.zip \
     --handler handler.handler \
@@ -30,7 +30,7 @@ awslocal lambda create-function-url-config \
     --auth-type NONE
 awslocal lambda create-function \
     --function-name list \
-    --runtime python3.11 \
+    --runtime python3.13 \
     --timeout 10 \
     --zip-file fileb://lambdas/list/lambda.zip \
     --handler handler.handler \
@@ -45,7 +45,7 @@ awslocal lambda create-function-url-config \
 
 awslocal lambda create-function \
     --function-name resize \
-    --runtime python3.11 \
+    --runtime python3.13 \
     --timeout 10 \
     --zip-file fileb://lambdas/resize/lambda.zip \
     --handler handler.handler \

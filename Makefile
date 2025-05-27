@@ -35,7 +35,7 @@ build-lambdas:
 deploy:
 	@echo "Deploying the application..."
 	@make build-lambdas
-	deployment/awslocal/deploy.sh
+	bash -c "deployment/awslocal/deploy.sh"
 	@echo "Application deployed successfully."
 
 ## Deploy the application locally using `tflocal`, a wrapper for the Terraform CLI

@@ -69,7 +69,7 @@ resource "aws_lambda_function" "presign_lambda" {
   function_name = "presign"
   filename      = "${local.root_dir}/lambdas/presign/lambda.zip"
   handler       = "handler.handler"
-  runtime       = "python3.11"
+  runtime       = "python3.13"
   timeout       = 10
   role          = aws_iam_role.presign_lambda_role.arn
   source_code_hash = filebase64sha256("${local.root_dir}/lambdas/presign/lambda.zip")
@@ -113,7 +113,7 @@ resource "aws_lambda_function" "list_lambda" {
   function_name = "list"
   filename      = "${local.root_dir}/lambdas/list/lambda.zip"
   handler       = "handler.handler"
-  runtime       = "python3.11"
+  runtime       = "python3.13"
   timeout       = 10
   role          = aws_iam_role.list_lambda_role.arn
   source_code_hash = filebase64sha256("${local.root_dir}/lambdas/list/lambda.zip")
@@ -169,7 +169,7 @@ resource "aws_lambda_function" "resize_lambda" {
   function_name = "resize"
   filename      = "${local.root_dir}/lambdas/resize/lambda.zip"
   handler       = "handler.handler"
-  runtime       = "python3.11"
+  runtime       = "python3.13"
   role          = aws_iam_role.resize_lambda_role.arn
   source_code_hash = filebase64sha256("${local.root_dir}/lambdas/resize/lambda.zip")
 

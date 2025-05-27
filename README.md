@@ -1,19 +1,5 @@
 # Serverless image resizer
 
-[![LocalStack Pods Launchpad](https://localstack.cloud/gh/launch-pod-badge.svg)](https://app.localstack.cloud/launchpad?url=https://github.com/localstack/sample-serverless-image-resizer-s3-lambda/releases/download/latest/release-pod.zip)
-[![GitHub Actions](https://github.com/localstack-samples/sample-serverless-image-resizer-s3-lambda/actions/workflows/integration-test.yml/badge.svg)](https://github.com/localstack-samples/sample-serverless-image-resizer-s3-lambda/actions/workflows/integration-test.yml)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/localstack-samples/sample-serverless-image-resizer-s3-lambda/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/localstack-samples/sample-serverless-image-resizer-s3-lambda/tree/main)
-[![AWS CodeBuild](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUUVDZExZT0ovUm5YejlKcHlXeGpuT1pRaC9hSzdDcFJVYlMvZzl0emtnWW5qcVdQUGY3YlJYWnBJeEdoOHd0OVkvd29XTUxuL2p3d3hVS0NFRnFlTzhRPSIsIml2UGFyYW1ldGVyU3BlYyI6IjQrdHhqVGY1N24ycTEvQkMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=codebuild-sample)](https://eu-central-1.codebuild.aws.amazon.com/project/eyJlbmNyeXB0ZWREYXRhIjoiOGpTQnR0a0J6ZnYwN3hNQ21DVkFoUU8zWTc4TExSaGk0b2p5UkVyNWhHSXhLSWZUSWt3eE1PUnpLZTRMWld2U3l3bVBWa2Frc084YjJ6UFZDRjNlcTc0U0xOa2lqVU1qZXdJMUFzdEVudz09IiwiaXZQYXJhbWV0ZXJTcGVjIjoib1FaZmhKMHZkc0NTbmdqcSIsIm1hdGVyaWFsU2V0U2VyaWFsIjoxfQ%3D%3D)
-[![GitLabCI](https://gitlab.com/localstack.cloud/samples/sample-serverless-image-resizer-s3-lambda/badges/main/pipeline.svg?ignore_skipped=true)](https://gitlab.com/localstack.cloud/samples/sample-serverless-image-resizer-s3-lambda)
-
-| Key          | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Environment  | <img src="https://img.shields.io/badge/LocalStack-deploys-4D29B4.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAKgAAACoABZrFArwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAALbSURBVHic7ZpNaxNRFIafczNTGIq0G2M7pXWRlRv3Lusf8AMFEQT3guDWhX9BcC/uFAr1B4igLgSF4EYDtsuQ3M5GYrTaj3Tmui2SpMnM3PlK3m1uzjnPw8xw50MoaNrttl+r1e4CNRv1jTG/+v3+c8dG8TSilHoAPLZVX0RYWlraUbYaJI2IuLZ7KKUWCisgq8wF5D1A3rF+EQyCYPHo6Ghh3BrP8wb1en3f9izDYlVAp9O5EkXRB8dxxl7QBoNBpLW+7fv+a5vzDIvVU0BELhpjJrmaK2NMw+YsIxunUaTZbLrdbveZ1vpmGvWyTOJToNlsuqurq1vAdWPMeSDzwzhJEh0Bp+FTmifzxBZQBXiIKaAq8BBDQJXgYUoBVYOHKQRUER4mFFBVeJhAQJXh4QwBVYeHMQJmAR5GCJgVeBgiYJbg4T8BswYPp+4GW63WwvLy8hZwLcd5TudvBj3+OFBIeA4PD596nvc1iiIrD21qtdr+ysrKR8cY42itCwUP0Gg0+sC27T5qb2/vMunB/0ipTmZxfN//orW+BCwmrGV6vd63BP9P2j9WxGbxbrd7B3g14fLfwFsROUlzBmNM33XdR6Meuxfp5eg54IYxJvXCx8fHL4F3w36blTdDI4/0WREwMnMBeQ+Qd+YC8h4g78wF5D1A3rEqwBiT6q4ubpRSI+ewuhP0PO/NwcHBExHJZZ8PICI/e73ep7z6zzNPwWP1djhuOp3OfRG5kLROFEXv19fXP49bU6TbYQDa7XZDRF6kUUtEtoFb49YUbh/gOM7YbwqnyG4URQ/PWlQ4ASllNwzDzY2NDX3WwioKmBgeqidgKnioloCp4aE6AmLBQzUExIaH8gtIBA/lFrCTFB7KK2AnDMOrSeGhnAJSg4fyCUgVHsolIHV4KI8AK/BQDgHW4KH4AqzCQwEfiIRheKKUAvjuuu7m2tpakPdMmcYYI1rre0EQ1LPo9w82qyNziMdZ3AAAAABJRU5ErkJggg=="> |
-| Services     | S3, SSM, Lambda, SNS, SES                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Integrations | AWS SDK, AWS CLI, GitHub actions, pytest                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Categories   | Serverless, S3 notifications, S3 website, Lambda function URLs, LocalStack developer endpoints, JavaScript, Python                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Level        | Intermediate                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-
 ## Introduction
 
 This is an app to resize images uploaded to S3 in a serverless way.
@@ -49,43 +35,39 @@ The GitHub workflow runs a set of integration tests using pytest.
 ### Dev environment
 
 Make sure you use the same version as the Python Lambdas to make Pillow work.
-If you use pyenv, then first install and activate Python 3.11:
+If you use pyenv, then first install and activate Python 3.13:
 
 ```bash
-pyenv install 3.11.6
-pyenv global 3.11.6
+brew install pyenv localstack awscli-local
+pyenv install 3.13.3
+pyenv global 3.13.3
 ```
 
 ```console
 % python --version
-Python 3.11.6
+Python 3.13.x
 ```
 
 Create a virtualenv and install all the development dependencies there:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements-dev.txt
+make install
 ```
 
-## Instructions
 
-You can set up and deploy the sample application on LocalStack by executing the commands in our Makefile. First, create a `.env` file using the provided `.env.example` file as a template, and include your LocalStack token in it. Then, run `make start` to initiate LocalStack on your machine. 
-
-Next, execute `make install` to install needed dependencies.
-
-After that, launch `make terraform-setup` to provision the infrastructure on LocalStack using Terraform CLI and its scripts. Alternatively, run `make awslocal-setup` to set up the infrastructure using `awslocal`, a wrapper for the AWS CLI.
-
-If you prefer, you can also follow these step-by-step instructions for a manual deployment.
-
-### LocalStack
-
-Start LocalStack Pro with Auth Token:
+Start LocalStack
 
 ```bash
-LOCALSTACK_AUTH_TOKEN=... localstack start (-d)
+make start
 ```
+
+Deploy locally on LocalStack
+
+```bash
+make deploy
+```
+
+Now open the Web app under [https://webapp.s3-website.localhost.localstack.cloud:4566/](https://webapp.s3-website.localhost.localstack.cloud:4566/)
 
 ### Terraform
 
@@ -144,7 +126,7 @@ This Lambda is responsible for generating pre-signed POST URLs to upload files t
 (cd lambdas/presign; rm -f lambda.zip; zip lambda.zip handler.py)
 awslocal lambda create-function \
     --function-name presign \
-    --runtime python3.11 \
+    --runtime python3.13 \
     --timeout 10 \
     --zip-file fileb://lambdas/presign/lambda.zip \
     --handler handler.handler \
@@ -172,7 +154,7 @@ awslocal lambda create-function \
     --function-name list \
     --handler handler.handler \
     --zip-file fileb://lambdas/list/lambda.zip \
-    --runtime python3.11 \
+    --runtime python3.13 \
     --role arn:aws:iam::000000000000:role/lambda-role \
     --environment Variables="{STAGE=local}"
 ```
@@ -199,7 +181,7 @@ awslocal lambda create-function-url-config \
 )
 awslocal lambda create-function \
     --function-name resize \
-    --runtime python3.11 \
+    --runtime python3.13 \
     --timeout 10 \
     --zip-file fileb://lambdas/resize/lambda.zip \
     --handler handler.handler \

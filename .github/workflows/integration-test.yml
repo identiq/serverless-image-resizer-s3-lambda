@@ -33,11 +33,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
+      - name: Set up Python 3.13
         id: setup-python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.11
+          python-version: 3.13
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -107,11 +107,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
+      - name: Set up Python 3.13
         id: setup-python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.11
+          python-version: 3.13
 
       - name: Docker setup (macos only)
         if: ${{ runner.os == 'macOS' }}

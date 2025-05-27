@@ -1,6 +1,6 @@
 boto3
-requests>=2.20
-Pillow==9.2.0
+requests>=2.32.3
+Pillow==11.2.1
 mypy-boto3-ssm
 mypy-boto3-sns
 mypy-boto3-s3
