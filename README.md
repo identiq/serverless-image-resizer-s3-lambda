@@ -202,7 +202,7 @@ awslocal s3api put-bucket-notification-configuration \
 
 ```bash
 awslocal s3 mb s3://webapp
-awslocal s3 sync --delete ./website s3://webapp
+awslocal s3 sync --delete ./apps/web/build/client s3://webapp
 awslocal s3 website s3://webapp --index-document index.html
 ```
 

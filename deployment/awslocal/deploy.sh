@@ -62,10 +62,9 @@ awslocal s3api put-bucket-notification-configuration \
     --notification-configuration "{\"LambdaFunctionConfigurations\": [{\"LambdaFunctionArn\": \"$fn_resize_arn\", \"Events\": [\"s3:ObjectCreated:*\"]}]}"
 
 awslocal s3 mb s3://webapp
-awslocal s3 sync --delete ./website s3://webapp
+awslocal s3 sync --delete ./apps/web/build/client s3://webapp
 awslocal s3 website s3://webapp --index-document index.html
 
-echo
 echo "Fetching function URL for 'presign' Lambda..."
 awslocal lambda list-function-url-configs --function-name presign --output json | jq -r '.FunctionUrlConfigs[0].FunctionUrl'
 echo "Fetching function URL for 'list' Lambda..."

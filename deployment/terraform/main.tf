@@ -227,8 +227,8 @@ resource "aws_s3_bucket_website_configuration" "website_configuration" {
 resource "aws_s3_object" "website_file_index" {
   bucket       = aws_s3_bucket.website_bucket.bucket
   key          = "index.html"
-  source       = "${local.root_dir}/website/index.html"
-  etag         = filemd5("${local.root_dir}/website/index.html")
+  source       = "${local.root_dir}/apps/web/build/client/index.html"
+  etag         = filemd5("${local.root_dir}/apps/web/build/client/index.html")
   content_type = "text/html"
   acl          = "public-read"
 }
@@ -236,8 +236,8 @@ resource "aws_s3_object" "website_file_index" {
 resource "aws_s3_object" "website_file_js" {
   bucket       = aws_s3_bucket.website_bucket.bucket
   key          = "app.js"
-  source       = "${local.root_dir}/website/app.js"
-  etag         = filemd5("${local.root_dir}/website/app.js")
+  source       = "${local.root_dir}/apps/web/build/client/app.js"
+  etag         = filemd5("${local.root_dir}/apps/web/build/client/app.js")
   content_type = "application/javascript"
   acl          = "public-read"
 }
@@ -245,8 +245,8 @@ resource "aws_s3_object" "website_file_js" {
 resource "aws_s3_object" "website_file_icon" {
   bucket       = aws_s3_bucket.website_bucket.bucket
   key          = "favicon.ico"
-  source       = "${local.root_dir}/website/favicon.ico"
-  etag         = filemd5("${local.root_dir}/website/favicon.ico")
+  source       = "${local.root_dir}/apps/web/build/client/favicon.ico"
+  etag         = filemd5("${local.root_dir}/apps/web/build/client/favicon.ico")
   content_type = "image/x-icon"
   acl          = "public-read"
 }
