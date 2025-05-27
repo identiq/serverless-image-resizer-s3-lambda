@@ -38,7 +38,7 @@ Make sure you use the same version as the Python Lambdas to make Pillow work.
 If you use pyenv, then first install and activate Python 3.13:
 
 ```bash
-brew install pyenv localstack awscli-local
+brew install pyenv localstack awscli-local jq
 pyenv install 3.13.3
 pyenv global 3.13.3
 ```
